@@ -1,17 +1,15 @@
-import fetch from "node-fetch";
-
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.send("DSR AI Bot Running");
+    return res.status(200).send("DSR AI Bot Running");
   }
 
-  const BOT_TOKEN = "8259113413:AAECzoe2V1D3xHFDgCF3nidRE6Gcj_ApOf8";
-  const GEMINI_KEY = "AIzaSyDPk-xC2vBHecYUbkRwPphwkxjV5pFK0bY";
+  const BOT_TOKEN = process.env.BOT_TOKEN;
+  const GEMINI_KEY = process.env.GEMINI_KEY;
 
   const update = req.body;
 
   if (!update.message || !update.message.text) {
-    return res.send("OK");
+    return res.status(200).send("OK");
   }
 
   const chatId = update.message.chat.id;
@@ -53,5 +51,5 @@ User said: ${userText}
     })
   });
 
-  res.send("OK");
+  return res.status(200).send("OK");
 }
