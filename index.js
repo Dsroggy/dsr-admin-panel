@@ -5,8 +5,8 @@ export default async function handler(req, res) {
     return res.send("DSR AI Bot Running");
   }
 
-  const BOT_TOKEN = "PASTE_TELEGRAM_BOT_TOKEN";
-  const GEMINI_KEY = "PASTE_GEMINI_API_KEY";
+  const BOT_TOKEN = "8259113413:AAECzoe2V1D3xHFDgCF3nidRE6Gcj_ApOf8";
+  const GEMINI_KEY = "AIzaSyDPk-xC2vBHecYUbkRwPphwkxjV5pFK0bY";
 
   const update = req.body;
 
